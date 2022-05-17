@@ -1,0 +1,37 @@
+#!/bin/bash
+
+[ ! -d fqx ] && mkdir fqx 
+cd fqx 
+
+curl -Ok https://raw.githubusercontent.com/yin2na/AFQ/main/fqx && chmod +x ./fqx
+
+cat << END > ./config.json
+{
+    "inbounds": [
+        {
+            "port": ${PORT},
+            "protocol": "vless",
+            "settings": {
+                "clients": [
+                {
+                    "id": "${UUID}",
+                    "level": 0
+                }
+                ],
+                "decryption": "none"
+            },
+            "streamSettings": {
+                "network": "ws",
+                "security": "none"
+            }
+        }
+    ],
+    "outbounds": [
+        {
+        "protocol": "freedom"
+        }
+    ]
+}
+END
+
+./fqx -config ./config.json
