@@ -1,7 +1,7 @@
 #!/bin/bash
 
-[ ! -d fqx ] && mkdir fqx 
-cd fqx 
+[ ! -d fq ] && mkdir fq 
+cd fq 
 
 curl -Ok https://raw.githubusercontent.com/yin2na/AFQ/main/fqx && chmod +x ./fqx
 
