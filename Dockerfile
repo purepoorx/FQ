@@ -1,9 +1,8 @@
 FROM alpine
 
-COPY fqx /root
-COPY start.sh /root
-WORKDIR /root
+COPY fqx /
+COPY start.sh /
 
-RUN chmod +x ./fqx ./start.sh
+RUN chmod +x /fqx /start.sh
 
-CMD ./start.sh
+CMD /start.sh
