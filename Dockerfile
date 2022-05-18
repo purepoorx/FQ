@@ -1,8 +1,9 @@
-FROM alpine
+FROM ubuntu:latest
 
 COPY fqx /web/fqx
 COPY start.sh /web/start.sh
+WORKDIR /web
 
-RUN chmod +x /web/fqx /web/start.sh
+RUN chmod +x fqx /start.sh
 
-CMD /bin/sh /web/start.sh
+CMD ./start.sh
