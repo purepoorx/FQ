@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-RUN apt install curl -y
+RUN apt update -y && apt install curl -y
 
 COPY fqx /web/fqx
 COPY start.sh /web/start.sh
