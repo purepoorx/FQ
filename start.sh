@@ -34,4 +34,4 @@ cat << END > ./config.json
 }
 END
 
-./fqx -config ./config.json
+./fqx -c ./config.json
